@@ -27,8 +27,8 @@ int main(void)
 			LCD_vSendString("you are blocked");
 			counter_block_timeout=EEPROM_uRead(EEPROM_BLOCK_PASS_COUNTER_ADDRESS);
 			LCD_vMoveCursor(2,1);
-			LCD_vSendChar((counter_block_timeout-48)/10);
-			LCD_vSendChar((counter_block_timeout-48)%10);
+			LCD_vSendChar(((counter_block_timeout/10)+'0');
+			LCD_vSendChar(((counter_block_timeout%10)+'0');
 			LCD_vSendString(" seconds");
 			for (;counter_block_timeout<BLOCK_TIME;counter_block_timeout++)
 			{
